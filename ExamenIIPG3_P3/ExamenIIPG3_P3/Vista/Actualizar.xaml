@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converter="clr-namespace:ExamenIIPG3_P3.Convertidor"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ExamenIIPG3_P3.Vista.Actualizar">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:BArrayImagen  x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame Padding="0,0,0,0" HeightRequest="40">
+                <Grid>
+
+                    <Button Text="Atras  ..." BorderWidth="3"
+                       BorderColor="Black"
+                       FontAttributes="Bold" 
+                       BackgroundColor="White" CornerRadius="0" HorizontalOptions="Start" Clicked="Button_Clicked" />
+                </Grid>
+            </Frame>
+            <Grid>
+                <Image Source="logo.png" Aspect="AspectFit" WidthRequest="110" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+            </Grid>
+
+            <StackLayout>
+
+
+                <Image x:Name="imgFoto"
+                       Source="imgMuestra.png"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" 
+                       WidthRequest="300"
+                       HeightRequest="220" >
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                              NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+
+                </Image>
+            </StackLayout>
+
+            <Label Text="Latitud:" 
+                   TextColor="Black"
+               Margin="30,10,0,0"
+               HorizontalOptions="StartAndExpand" 
+               FontSize="20"/>
+
+            <Entry x:Name="txtLatitude"
+                   Keyboard="Numeric"
+                   Placeholder="Ejemplo: 15.67"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30,0,30,0"
+                   IsEnabled="False"/>
+
+            <Label Text="Longitud:" 
+                   TextColor="Black"
+               Margin="30,10,0,0"
+               HorizontalOptions="StartAndExpand" 
+               FontSize="20"/>
+
+            <Entry x:Name="txtLongitude"
+                   Keyboard="Numeric"
+                   Placeholder="Ejemplo: -81.78"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30,0,30,0"
+                   IsEnabled="False"/>
+
+            <Label Text="Descripcion de la Ubicación:" 
+                   TextColor="Black"
+               Margin="30,10,0,0"
+               HorizontalOptions="StartAndExpand" 
+               FontSize="20"/>
+
+            <Editor x:Name="txtDescription"
+                    Keyboard="Text"
+                    AutoSize="TextChanges"
+                    MaxLength="50"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="30,0,30,0"
+                    Placeholder="Escriba una ubicación"/>
+
+
+
+            <Grid Margin="20,10,20,10">
+
+
+                <Label Text="   Grabar nota de voz"
+                   TextColor="Black"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Column="0"
+                   x:Name="txtMessage"   
+                   FontSize="16"
+                   FontAttributes="Bold"
+                       />
+
+                <Button Text="Grabar" 
+                    x:Name="btnGrabar" 
+                    Margin="20,0,20,0"
+                    BackgroundColor="White"
+                    CornerRadius="0"
+                    Grid.Column="1"
+                    BorderWidth="3"
+                    BorderColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="btnGrabar_Clicked"/>
+
+            </Grid>
+
+            
+                
+                <Button x:Name="btnAdd"
+                            Text="Actualizar"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="0"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            CornerRadius="0"
+                             Margin="1,2,1,5"
+                            Clicked="btnAdd_Clicked"/>
+
+                <Button x:Name="btnUpdateLocation"
+                            Text="Localizacion Nueva"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            CornerRadius="0"
+                            FontSize="13"
+                            Grid.Column="1"
+                            Margin="1,2,1,20"
+                            Clicked="btnUpdateLocation_Clicked"/>
+           
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

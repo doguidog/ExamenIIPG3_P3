@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.exameniipg3_p3">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
+    <application android:label="ExamenIIPG3_P3.Android" android:theme="@style/MainTheme">
+
+		<provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider"
+				android:exported="false" android:grantUriPermissions="true">
+		<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+		
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBb_6RfHfYxgLIxFuu_qMOYiRO7v9ol5pg"/>
+				
+	</application>
+	
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.location" android:required="false" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+	<uses-feature android:name="android.hardware.location.network" android:required="false" />
+	<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	
+</manifest>

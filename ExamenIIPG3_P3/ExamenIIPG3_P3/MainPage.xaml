@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenIIPG3_P3.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ScrollView>
+        <StackLayout>
+
+            <Frame Grid.Row="0" Padding="0,0,0,0">
+
+                <Label Text="  Nueva Ubicación | Ubicaciones salvadas  " 
+                       HorizontalOptions="Center"
+                       TextColor="Black" 
+                       BackgroundColor="LightBlue"
+                       FontSize="19"
+                       FontAttributes="Bold"
+                       />
+            </Frame>
+
+            <Grid>
+                <Image Source="logo.png"
+               Aspect="AspectFit"
+               WidthRequest="110"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               />
+            </Grid>
+
+            <StackLayout>
+
+                <Image x:Name="imgFoto"
+                       Source="imgMuestra.png"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" 
+                       WidthRequest="300"
+                       HeightRequest="220" >
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                              NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+
+                </Image>
+            </StackLayout>
+
+            <Label Text="Latitud:" 
+               Margin="30,10,0,0"
+               HorizontalOptions="StartAndExpand" 
+               FontSize="20"
+               TextColor="Black"/>
+
+            <Entry x:Name="txtLatitude"
+                   Keyboard="Numeric"
+                   Placeholder="Ejemplo: 14.01"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30,0,30,0"
+                   IsEnabled="False"
+                   />
+
+            <Label Text="Longitud:" 
+               Margin="30,10,0,0"
+               HorizontalOptions="StartAndExpand" 
+               TextColor="Black"
+               FontSize="20"/>
+
+            <Entry x:Name="txtLongitude"
+                   Keyboard="Numeric"
+                   Placeholder="Ejemplo: -88.01"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30,0,30,0"
+                   IsEnabled="False"
+                   />
+
+            <Label Text="Descripcion de la Ubicación:" 
+               Margin="30,10,0,0"
+               TextColor="Black"
+               HorizontalOptions="StartAndExpand" 
+               FontSize="20"/>
+
+            <Editor x:Name="txtDescription"
+                    Keyboard="Text"
+                    AutoSize="TextChanges"
+                    MaxLength="50"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="30,0,30,0"
+                    Placeholder="Escriba una ubicación"
+                    />
+
+            <Grid Margin="20,10,20,10">
+                
+
+                <Label Text="   Grabar nota de voz"
+                   TextColor="Black"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Column="0"
+                   x:Name="txtMessage"   
+                   FontSize="16"
+                   FontAttributes="Bold"
+                       />
+
+
+                <Button Text="Grabar" 
+                    x:Name="btnGrabar" 
+                    Margin="20,0,20,0"
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Column="1"
+                    BorderWidth="3"
+                    BorderColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    Clicked="btnGrabar_Clicked"/>
+
+            </Grid>
+
+
+                <Button x:Name="btnAdd"
+                            Text="     Salvar Ubicación     "
+                            HorizontalOptions="CenterAndExpand"
+                            Grid.Column="0"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            Margin="1,2,1,5"
+                            Clicked="btnAdd_Clicked"/>
+
+            <Button x:Name="btnList"
+                            Text="Ubicaciones Salvadas"
+                            HorizontalOptions="CenterAndExpand"
+                            Grid.Column="1"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            Margin="1,2,1,20"
+                            Clicked="btnList_Clicked"/>
+
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

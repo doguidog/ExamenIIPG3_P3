@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="ExamenIIPG3_P3.Vista.Mapa">
+
+    <Grid BackgroundColor="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Frame Padding="0,0,0,0" HeightRequest="40" Grid.Row="0" Grid.Column="0">
+            <Grid>
+
+                <Button Text="Atras  ..."
+                        HorizontalOptions="Start"
+                        BorderColor="Black"
+                        FontAttributes="Bold" 
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        BorderWidth="3"
+                        Clicked="Button_Clicked"/>
+            </Grid>
+        </Frame>
+
+        <maps:Map x:Name="mapa" 
+                  Grid.Row="1" 
+                  Grid.Column="0"
+                  IsShowingUser="True"/>
+
+        <StackLayout Grid.Row="2"
+                     Grid.Column="0" >
+
+            <Button x:Name="btnNavegar"
+                    Text="Navegar"
+                    BorderColor="Black"
+                    FontAttributes="Bold" 
+                    BackgroundColor="White"
+                    CornerRadius="0"
+                    FontSize="16"
+                    BorderWidth="3"
+                    Clicked="btnNavegar_Clicked"
+                    Margin="30,0,30,0" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

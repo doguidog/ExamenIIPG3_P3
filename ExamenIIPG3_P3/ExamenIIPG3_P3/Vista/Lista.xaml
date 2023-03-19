@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converter="clr-namespace:ExamenIIPG3_P3.Convertidor"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ExamenIIPG3_P3.Vista.Lista">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:BArrayImagen x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Frame Padding="0,0,0,0" HeightRequest="50">
+            <Grid>
+
+                <Button Text="Atras  ..."
+                       BackgroundColor="White"
+                       CornerRadius="0"
+                       BorderWidth="3"
+                       BorderColor="Black"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       Clicked="Button_Clicked"
+                                 />
+            </Grid>
+
+
+        </Frame>
+
+        <Grid Padding="15,0,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+
+                <ListView x:Name="listSites" 
+                      ItemTapped="listSites_ItemTapped"
+                      >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Grid Margin="0, 2, 0, 2">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding Image,  Converter={StaticResource ByteToImage}}"
+                                       Grid.Column="0"/>
+
+                                    <Label Grid.Column="1" 
+                                       Text="{Binding Description}"
+                                       VerticalOptions="Center"
+                                       BackgroundColor="LightBlue"
+                                       FontAttributes="Bold"
+                                       />
+
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+
+                <Grid>
+                    <Button x:Name="btnDelete"
+                            Text="Eliminar  /  Actualizar"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            Grid.Row="0"
+                            HeightRequest="40"
+                            Clicked="btnDelete_Clicked"
+                            />
+
+                    <Button x:Name="btnViewMapa"
+                            Text="Ver Mapa"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="0"
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            Grid.Row="1"
+                            HeightRequest="40"
+                            Clicked="btnViewMapa_Clicked"
+                            />
+
+                    <Button x:Name="btnViewListen"
+                            Text="Escuchar Audio"
+                            HorizontalOptions="FillAndExpand" 
+                            BackgroundColor="White"
+                            BorderWidth="3"
+                            BorderColor="Black"
+                            FontAttributes="Bold"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            HeightRequest="40"
+                            Clicked="btnViewListen_Clicked"
+                            />
+                </Grid>
+
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
